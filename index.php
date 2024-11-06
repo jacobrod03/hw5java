@@ -29,6 +29,20 @@ document.getElementById("demo").innerHTML =
 "The value of z is " * z * ".";
 </script>
 
+<p>Enter your information in the field, then click "Submit":</p>
+
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br><br>
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+
+<script>
+function myFunction() {
+  document.getElementById("frm1").submit();
+}
+</script>
+
 <?php
 include "view-footer.php";
 ?>
