@@ -59,21 +59,49 @@ function myFunction() {
 
 //code here
 
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor:"rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: yValues
-    }]
-  },
-  options:{...}
-});
+<html>
+<head>
+  <title>Classes Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="classesChart" width="400" height="200"></canvas>
+  <script>
+    // JavaScript code to create the chart
+    const ctx = document.getElementById('classesChart').getContext('2d');
+    const classesChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['English', 'Math', 'History', 'Science'],
+        datasets: [{
+          label: 'Scores',
+          data: [85, 90, 78, 88], // Example scores for each class
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
 
 <?php
 include "view-footer.php";
