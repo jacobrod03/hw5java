@@ -2,8 +2,15 @@
 <html>
 <body>
 
-<h1 style="background-color:blue; text-align:center;">Jacob Hw5: JavaScript Functions</h1>
+<h1>JavaScript Strings</h1>
 
+<p>Strings can be written with double or single quotes.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 'John Doe';
+</script>
 
 </body>
 </html>
