@@ -43,20 +43,19 @@ function myFunction() {
 }
 </script>
 
-const xArray = ["Math","Science","English","History","Spanish"];
-const yArray = [55, 49, 44, 24, 15];
+<h3>OU Message to Students</h3>
 
-const data = [{
-  x: xArray,
-  y: yArray,
-  type: "bar",
-  orientation:"v",
-  marker: {color:"rgba(0,0,255)"}
-}];
+<p id="demo">
+  Over the past four years, our journey at the University of Oklahoma has been nothing short of transformative. Our “Lead On, University” Strategic Plan, launched in July 2020, has ignited a spirit of excellence within us. Together, we have achieved milestones that are reshaping our future in ways that will change lives for generations to come.
+</p>
 
-const layout = {title:"Subjects in School"};
+<button type="button" onclick="myFunction()">Try it</button>
 
-Plotly.newPlot("myPlot", data, layout);
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
 
 <?php
 include "view-footer.php";
