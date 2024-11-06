@@ -43,6 +43,21 @@ function myFunction() {
 }
 </script>
 
+const xArray = ["Math","Science","English","History","Spanish"];
+const yArray = [55, 49, 44, 24, 15];
+
+const data = [{
+  x: xArray,
+  y: yArray,
+  type: "bar",
+  orientation:"v",
+  marker: {color:"rgba(0,0,255)"}
+}];
+
+const layout = {title:"Subjects in School"};
+
+Plotly.newPlot("myPlot", data, layout);
+
 <?php
 include "view-footer.php";
 ?>
