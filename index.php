@@ -12,6 +12,10 @@ include "view-header.php";
 document.getElementById("demo").innerHTML = 'Jacob Rodriguez';
 </script>
 
+Chart.defaults.backgroundColor = '#9BD0F5';
+Chart.defaults.borderColor = '#36A2EB';
+Chart.defaults.color = '#000';  //third party java
+
 <h2>Class Schedule</h2>
 
 <p>The <b>number of hours</b> enrolled is<b> 12</b> for the semester.</p>
