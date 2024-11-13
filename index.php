@@ -14,7 +14,7 @@ document.getElementById("demo").innerHTML = 'Jacob Rodriguez';
 
 Chart.defaults.backgroundColor = '#9BD0F5';
 Chart.defaults.borderColor = '#36A2EB';
-Chart.defaults.color = '#000';  //third party java
+Chart.defaults.color = '#000';  
 
 <h2>Class Schedule</h2>
 
