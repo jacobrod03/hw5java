@@ -4,14 +4,7 @@ include "view-header.php";
 ?>
 <h1>Homework 5</h1>
 
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-<p>The University of Oklahoma.</p>
+<p>The University of Oklahoma</p>
 
 <p id="demo"></p>
 
@@ -76,7 +69,6 @@ Chart.defaults.backgroundColor = '#9BD0F5';
 Chart.defaults.borderColor = '#36A2EB';
 Chart.defaults.color = '#000';
     
-    // JavaScript code to create the chart
     const ctx = document.getElementById('classesChart').getContext('2d');
     const classesChart = new Chart(ctx, {
       type: 'bar',
@@ -109,6 +101,11 @@ Chart.defaults.color = '#000';
       }
     });
   </script>
+
+  <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="chart"></canvas>
+</div>
+  
 </body>
 </html>
 
