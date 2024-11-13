@@ -43,6 +43,22 @@ function myFunction() {
 </script>
 
 <h3>OU Message to Students</h3>
+//
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={roboto.className}>
+      <body>{children}</body>
+    </html>
+  )
+}
 
 <p id="demo">
   Over the past four years, our journey at the University of Oklahoma has been nothing short of transformative. Our “Lead On, University” Strategic Plan, launched in July 2020, has ignited a spirit of excellence within us. Together, we have achieved milestones that are reshaping our future in ways that will change lives for generations to come.
