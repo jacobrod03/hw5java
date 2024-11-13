@@ -2,26 +2,9 @@
 $pageTitle = "Home";
 include "view-header.php";
 ?>
-import React from 'react';
+<h1>Homework 5</h1>
 
-// Create a functional component
-const UniversityText = () => {
-  // Styles to change the font and size
-  const styles = {
-    fontSize: '24px', // adjust as needed
-    fontFamily: 'Arial, sans-serif', // you can change to any font
-    color: '#000', // set the color if desired
-  };
-
-  return (
-    <div>
-      <h1>Homework 5</h1>
-      <p style={styles}>The University of Oklahoma</p>
-    </div>
-  );
-};
-
-export default UniversityText;
+<p>THE UNIVERSITY OF OKLAHOMA</p>
 
 <p id="demo"></p>
 
