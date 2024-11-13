@@ -2,7 +2,6 @@
 $pageTitle = "Home";
 include "view-header.php";
 ?>
-
 <h1>Homework 5</h1>
 
 <p>The University of Oklahoma.</p>
