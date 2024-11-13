@@ -12,10 +12,6 @@ include "view-header.php";
 document.getElementById("demo").innerHTML = 'Jacob Rodriguez';
 </script>
 
-Chart.defaults.backgroundColor = '#9BD0F5';
-Chart.defaults.borderColor = '#36A2EB';
-Chart.defaults.color = '#000';
-
 <h2>Class Schedule</h2>
 
 <p>The <b>number of hours</b> enrolled is<b> 12</b> for the semester.</p>
@@ -68,6 +64,11 @@ function myFunction() {
 <body>
   <canvas id="classesChart" width="400" height="200"></canvas>
   <script>
+    
+Chart.defaults.backgroundColor = '#9BD0F5';
+Chart.defaults.borderColor = '#36A2EB';
+Chart.defaults.color = '#000';
+    
     // JavaScript code to create the chart
     const ctx = document.getElementById('classesChart').getContext('2d');
     const classesChart = new Chart(ctx, {
