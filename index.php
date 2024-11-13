@@ -101,10 +101,6 @@ Chart.defaults.color = '#000';
       }
     });
   </script>
-
-  <div class="chart-container" style="position: relative; height:40vh; width:80vw">
-    <canvas id="chart"></canvas>
-</div>
   
 </body>
 </html>
