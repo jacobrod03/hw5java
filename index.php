@@ -12,24 +12,9 @@ include "view-header.php";
 document.getElementById("demo").innerHTML = 'Jacob Rodriguez';
 </script>
 
-const data = {
-  labels: ['A', 'B', 'C'],
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [1, 2, 3],
-      borderColor: '#36A2EB',
-      backgroundColor: '#9BD0F5',
-    },
-    {
-      label: 'Dataset 2',
-      data: [2, 3, 4],
-      borderColor: '#FF6384',
-      backgroundColor: '#FFB1C1',
-    }
-  ]
-};
- 
+Chart.defaults.backgroundColor = '#9BD0F5';
+Chart.defaults.borderColor = '#36A2EB';
+Chart.defaults.color = '#000';
 
 <h2>Class Schedule</h2>
 
@@ -74,8 +59,6 @@ function myFunction() {
   document.getElementById("demo").innerHTML = "Paragraph changed.";
 }
 </script>
-
-//code here
 
 <html>
 <head>
