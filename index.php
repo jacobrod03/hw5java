@@ -48,7 +48,7 @@ function myFunction() {
   Over the past four years, our journey at the University of Oklahoma has been nothing short of transformative. Our “Lead On, University” Strategic Plan, launched in July 2020, has ignited a spirit of excellence within us. Together, we have achieved milestones that are reshaping our future in ways that will change lives for generations to come.
 </p>
 
-<button type="button" onclick="myFunction()">Try it</button>
+<button type="button" onclick="myFunction()">Go Sooners</button>
 
 <script>
 function myFunction() {
@@ -60,7 +60,6 @@ function myFunction() {
 <head>
   <title>Classes Chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!--thirdparty javascript-->
 </head>
 <body>
   <canvas id="classesChart" width="400" height="200"></canvas>
