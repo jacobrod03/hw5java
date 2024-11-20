@@ -20,9 +20,9 @@ document.getElementById("demo").innerHTML = 'Jacob Rodriguez';
 
 <script>
 var x, y, z;  // Declare 3 variables
-x = 3;    // Assign the value 5 to x
-y = 4;    // Assign the value 6 to y
-z = x * y;  // Assign the sum of x and y to z
+x = 3;    // Assign the value 3 to x
+y = 4;    // Assign the value 4 to y
+z = x * y;  // Assign the product of x and y to z
 
 document.getElementById("demo").innerHTML =
 "The value of z is " + z + ".";  // Corrected the syntax for displaying the value of z
@@ -86,49 +86,50 @@ function changeParagraph() {
 <html>
 <head>
   <title>Classes Chart</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
 </head>
 <body>
+  <!-- Chart Canvas -->
   <canvas id="classesChart" width="400" height="200"></canvas>
   <script>
+    // Default chart settings (customize as needed)
+    Chart.defaults.backgroundColor = '#9BD0F5';
+    Chart.defaults.borderColor = '#36A2EB';
+    Chart.defaults.color = '#000';
     
-Chart.defaults.backgroundColor = '#9BD0F5';
-Chart.defaults.borderColor = '#36A2EB';
-Chart.defaults.color = '#000';
-    
+    // Create chart in the canvas element with the ID "classesChart"
     const ctx = document.getElementById('classesChart').getContext('2d');
     const classesChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'bar',  // Chart type: bar chart
       data: {
-        labels: ['English', 'Math', 'History', 'Science'],
+        labels: ['English', 'Math', 'History', 'Science'],  // Label for each bar
         datasets: [{
-          label: 'Scores',
-          data: [85, 90, 78, 88], // Example scores for each class
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)'
+          label: 'Scores',  // Dataset label
+          data: [85, 90, 78, 88],  // Example scores for each class
+          backgroundColor: [  // Background color for each bar
+            'rgba(255, 99, 132, 0.2)',  // English
+            'rgba(54, 162, 235, 0.2)',  // Math
+            'rgba(255, 206, 86, 0.2)',  // History
+            'rgba(75, 192, 192, 0.2)'   // Science
           ],
-          borderColor: [
+          borderColor: [  // Border color for each bar
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)'
           ],
-          borderWidth: 1
+          borderWidth: 1  // Border width for the bars
         }]
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true  // Start y-axis at 0
           }
         }
       }
     });
   </script>
-
 </body>
 </html>
 
