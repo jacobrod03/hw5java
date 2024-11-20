@@ -96,7 +96,11 @@ function changeParagraph() {
   <button onclick="randomizeChart()">Randomize Scores</button> <!-- Button to trigger randomization -->
   
   <script>
-    // Example data (class names and their scores)
+
+    Chart.defaults.backgroundColor = '#9BD0F5';
+    Chart.defaults.borderColor = '#36A2EB';
+    Chart.defaults.color = '#000';
+    
     const classNames = ['English', 'Math', 'History', 'Science'];
     const originalScores = [85, 90, 78, 88];  // Original scores
 
