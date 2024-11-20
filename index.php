@@ -88,13 +88,20 @@ function changeParagraph() {
   <title>Classes Chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> <!-- Lodash -->
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script> <!-- Moment.js -->
 </head>
 <body>
   <!-- Chart Canvas -->
   <canvas id="classesChart" width="400" height="200"></canvas>
   
   <button onclick="randomizeChart()">Randomize Scores</button> <!-- Button to trigger randomization -->
-  
+
+  <h3>Current Date and Time</h3>
+  <p id="current-time"></p>
+
+  <h3>Next Semester Countdown</h3>
+  <p id="semester-countdown"></p>
+
   <script>
 
     Chart.defaults.backgroundColor = '#9BD0F5';
@@ -151,6 +158,15 @@ function changeParagraph() {
       // Log the randomized scores to the console
       console.log('Randomized Scores:', randomizedScores);
     }
+
+    // Display current date and time using Moment.js
+    document.getElementById('current-time').innerHTML = 'Current Date and Time: ' + moment().format('MMMM Do YYYY, h:mm:ss a');
+
+    // Calculate and display time until the next semester (assumed to be January 15)
+    var nextSemester = moment('2025-01-15');
+    var timeUntilSemester = nextSemester.fromNow();
+    document.getElementById('semester-countdown').innerHTML = 'Next semester starts in: ' + timeUntilSemester;
+
   </script>
 </body>
 </html>
