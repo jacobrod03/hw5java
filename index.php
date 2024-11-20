@@ -25,7 +25,7 @@ y = 4;    // Assign the value 4 to y
 z = x * y;  // Assign the product of x and y to z
 
 document.getElementById("demo").innerHTML =
-"The value of z is " + z + ".";  // Corrected the syntax for displaying the value of z
+"The value of z is " + z + ".";  
 </script>
 
 <p>Enter your information in the field, then click "Submit":</p>
@@ -72,7 +72,7 @@ function submitForm() {
 <script>
 function changeParagraph() {
   // Make an Axios call to fetch new message content
-  axios.get('/message_api.php') // Assuming you have an API endpoint that provides a new message
+  axios.get('/message_api.php') 
   .then(function (response) {
     document.getElementById("demo").innerHTML = response.data.message;  // Update the paragraph with the new message
   })
@@ -94,7 +94,7 @@ function changeParagraph() {
   <!-- Chart Canvas -->
   <canvas id="classesChart" width="400" height="200"></canvas>
   
-  <button onclick="randomizeChart()">Randomize Scores</button> <!-- Button to trigger randomization -->
+  <button onclick="randomizeChart()">Randomize Scores</button> 
 
   <h3>Current Date and Time</h3>
   <p id="current-time"></p>
@@ -126,13 +126,13 @@ function changeParagraph() {
             'rgba(255, 206, 86, 0.2)',  // History
             'rgba(75, 192, 192, 0.2)'   // Science
           ],
-          borderColor: [  // Border color for each bar
+          borderColor: [  
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)'
           ],
-          borderWidth: 1  // Border width for the bars
+          borderWidth: 1  
         }]
       },
       options: {
@@ -147,7 +147,7 @@ function changeParagraph() {
     // Function to randomize and update chart scores
     function randomizeChart() {
       // Use Lodash to shuffle the original scores and update the chart
-      const randomizedScores = _.shuffle(originalScores);  // Randomize the scores using Lodash
+      const randomizedScores = _.shuffle(originalScores);  
 
       // Update the chart data with randomized scores
       classesChart.data.datasets[0].data = randomizedScores;
