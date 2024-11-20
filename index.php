@@ -25,7 +25,7 @@ y = 4;    // Assign the value 4 to y
 z = x * y;  // Assign the product of x and y to z
 
 document.getElementById("demo").innerHTML =
-"The value of z is " + z + ".";  // Corrected the syntax for displaying the value of z
+"The value of z is " + z + ".";  
 </script>
 
 <p>Enter your information in the field, then click "Submit":</p>
@@ -87,11 +87,20 @@ function changeParagraph() {
 <head>
   <title>Classes Chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> <!-- Lodash -->
 </head>
 <body>
   <!-- Chart Canvas -->
-  <canvas id="classesChart" width="400" height="200"></canvas>
+  <canvas id="classesChart" width="300" height="100"></canvas>
   <script>
+    // Example data (class names and their scores)
+    const classNames = ['English', 'Math', 'History', 'Science'];
+    const classScores = [85, 90, 78, 88];
+
+    // Using Lodash to randomize and sort the data
+    const randomizedScores = _.shuffle(classScores);  // Randomize the scores
+    const sortedScores = _.sortBy(randomizedScores);  // Sort scores in ascending order
+
     // Default chart settings (customize as needed)
     Chart.defaults.backgroundColor = '#9BD0F5';
     Chart.defaults.borderColor = '#36A2EB';
@@ -102,17 +111,17 @@ function changeParagraph() {
     const classesChart = new Chart(ctx, {
       type: 'bar',  // Chart type: bar chart
       data: {
-        labels: ['English', 'Math', 'History', 'Science'],  
+        labels: classNames,  
         datasets: [{
           label: 'Scores',  // Dataset label
-          data: [85, 90, 78, 88],  
-          backgroundColor: [  // Background color for each bar
+          data: sortedScores,  // sorted scores
+          backgroundColor: [  
             'rgba(255, 99, 132, 0.2)',  // English
             'rgba(54, 162, 235, 0.2)',  // Math
             'rgba(255, 206, 86, 0.2)',  // History
             'rgba(75, 192, 192, 0.2)'   // Science
           ],
-          borderColor: [  
+          borderColor: [  // Border color for each bar
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
@@ -129,6 +138,11 @@ function changeParagraph() {
         }
       }
     });
+
+    // Display the randomized scores (Lodash)
+    console.log('Original Scores:', classScores);
+    console.log('Randomized Scores:', randomizedScores);
+    console.log('Sorted Scores:', sortedScores);
   </script>
 </body>
 </html>
