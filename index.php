@@ -25,20 +25,39 @@ y = 4;    // Assign the value 6 to y
 z = x * y;  // Assign the sum of x and y to z
 
 document.getElementById("demo").innerHTML =
-"The value of z is " * z * ".";
+"The value of z is " + z + ".";  // Corrected the syntax for displaying the value of z
 </script>
 
 <p>Enter your information in the field, then click "Submit":</p>
 
-<form id="frm1" action="/action_page.php">
-  First name: <input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br><br>
-  <input type="button" onclick="myFunction()" value="Submit">
+<form id="frm1">
+  First name: <input type="text" name="fname" id="fname"><br>
+  Last name: <input type="text" name="lname" id="lname"><br><br>
+  <input type="button" onclick="submitForm()" value="Submit">
 </form>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Axios -->
 <script>
-function myFunction() {
-  document.getElementById("frm1").submit();
+function submitForm() {
+  // Get the values from the form
+  const firstName = document.getElementById('fname').value;
+  const lastName = document.getElementById('lname').value;
+
+  // Use Axios to send a POST request with the form data
+  axios.post('/action_page.php', {
+    fname: firstName,
+    lname: lastName
+  })
+  .then(function (response) {
+    // Handle the response here
+    console.log(response);
+    alert('Form submitted successfully!');
+  })
+  .catch(function (error) {
+    // Handle any errors here
+    console.error(error);
+    alert('There was an error submitting the form.');
+  });
 }
 </script>
 
@@ -48,11 +67,19 @@ function myFunction() {
   Over the past four years, our journey at the University of Oklahoma has been nothing short of transformative. Our “Lead On, University” Strategic Plan, launched in July 2020, has ignited a spirit of excellence within us. Together, we have achieved milestones that are reshaping our future in ways that will change lives for generations to come.
 </p>
 
-<button type="button" onclick="myFunction()">Go Sooners</button>
+<button type="button" onclick="changeParagraph()">Go Sooners</button>
 
 <script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Paragraph changed.";
+function changeParagraph() {
+  // Make an Axios call to fetch new message content
+  axios.get('/message_api.php') // Assuming you have an API endpoint that provides a new message
+  .then(function (response) {
+    document.getElementById("demo").innerHTML = response.data.message;  // Update the paragraph with the new message
+  })
+  .catch(function (error) {
+    console.error(error);
+    alert('There was an error fetching the message.');
+  });
 }
 </script>
 
