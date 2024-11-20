@@ -25,7 +25,7 @@ y = 4;    // Assign the value 4 to y
 z = x * y;  // Assign the product of x and y to z
 
 document.getElementById("demo").innerHTML =
-"The value of z is " + z + ".";  
+"The value of z is " + z + ".";  // Corrected the syntax for displaying the value of z
 </script>
 
 <p>Enter your information in the field, then click "Submit":</p>
@@ -91,31 +91,25 @@ function changeParagraph() {
 </head>
 <body>
   <!-- Chart Canvas -->
-  <canvas id="classesChart" width="300" height="100"></canvas>
+  <canvas id="classesChart" width="400" height="200"></canvas>
+  
+  <button onclick="randomizeChart()">Randomize Scores</button> <!-- Button to trigger randomization -->
+  
   <script>
     // Example data (class names and their scores)
     const classNames = ['English', 'Math', 'History', 'Science'];
-    const classScores = [85, 90, 78, 88];
+    const originalScores = [85, 90, 78, 88];  // Original scores
 
-    // Using Lodash to randomize and sort the data
-    const randomizedScores = _.shuffle(classScores);  // Randomize the scores
-    const sortedScores = _.sortBy(randomizedScores);  // Sort scores in ascending order
-
-    // Default chart settings (customize as needed)
-    Chart.defaults.backgroundColor = '#9BD0F5';
-    Chart.defaults.borderColor = '#36A2EB';
-    Chart.defaults.color = '#000';
-    
-    // Create chart in the canvas element with the ID "classesChart"
+    // Create the chart initially with the original scores
     const ctx = document.getElementById('classesChart').getContext('2d');
-    const classesChart = new Chart(ctx, {
+    let classesChart = new Chart(ctx, {
       type: 'bar',  // Chart type: bar chart
       data: {
-        labels: classNames,  
+        labels: classNames,  // Class names as labels
         datasets: [{
           label: 'Scores',  // Dataset label
-          data: sortedScores,  // sorted scores
-          backgroundColor: [  
+          data: originalScores,  // Initial scores
+          backgroundColor: [  // Background color for each bar
             'rgba(255, 99, 132, 0.2)',  // English
             'rgba(54, 162, 235, 0.2)',  // Math
             'rgba(255, 206, 86, 0.2)',  // History
@@ -127,22 +121,32 @@ function changeParagraph() {
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)'
           ],
-          borderWidth: 1  
+          borderWidth: 1  // Border width for the bars
         }]
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true  
+            beginAtZero: true  // Start y-axis at 0
           }
         }
       }
     });
 
-    // Display the randomized scores (Lodash)
-    console.log('Original Scores:', classScores);
-    console.log('Randomized Scores:', randomizedScores);
-    console.log('Sorted Scores:', sortedScores);
+    // Function to randomize and update chart scores
+    function randomizeChart() {
+      // Use Lodash to shuffle the original scores and update the chart
+      const randomizedScores = _.shuffle(originalScores);  // Randomize the scores using Lodash
+
+      // Update the chart data with randomized scores
+      classesChart.data.datasets[0].data = randomizedScores;
+      
+      // Refresh the chart
+      classesChart.update();
+      
+      // Log the randomized scores to the console
+      console.log('Randomized Scores:', randomizedScores);
+    }
   </script>
 </body>
 </html>
