@@ -146,10 +146,10 @@ function changeParagraph() {
 
     // Function to randomize and update chart scores
     function randomizeChart() {
-      // Use Lodash to shuffle the original scores and update the chart
+      
       const randomizedScores = _.shuffle(originalScores);  
 
-      // Update the chart data with randomized scores
+      
       classesChart.data.datasets[0].data = randomizedScores;
       
       // Refresh the chart
