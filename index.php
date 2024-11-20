@@ -43,7 +43,7 @@ function submitForm() {
   const firstName = document.getElementById('fname').value;
   const lastName = document.getElementById('lname').value;
 
-  // Use Axios to send a POST request with the form data
+  // Use Axios to send a POST request 
   axios.post('/action_page.php', {
     fname: firstName,
     lname: lastName
@@ -102,29 +102,29 @@ function changeParagraph() {
     const classesChart = new Chart(ctx, {
       type: 'bar',  // Chart type: bar chart
       data: {
-        labels: ['English', 'Math', 'History', 'Science'],  // Label for each bar
+        labels: ['English', 'Math', 'History', 'Science'],  
         datasets: [{
           label: 'Scores',  // Dataset label
-          data: [85, 90, 78, 88],  // Example scores for each class
+          data: [85, 90, 78, 88],  
           backgroundColor: [  // Background color for each bar
             'rgba(255, 99, 132, 0.2)',  // English
             'rgba(54, 162, 235, 0.2)',  // Math
             'rgba(255, 206, 86, 0.2)',  // History
             'rgba(75, 192, 192, 0.2)'   // Science
           ],
-          borderColor: [  // Border color for each bar
+          borderColor: [  
             'rgba(255, 99, 132, 1)',
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)'
           ],
-          borderWidth: 1  // Border width for the bars
+          borderWidth: 1  
         }]
       },
       options: {
         scales: {
           y: {
-            beginAtZero: true  // Start y-axis at 0
+            beginAtZero: true  
           }
         }
       }
